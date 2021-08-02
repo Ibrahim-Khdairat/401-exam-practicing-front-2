@@ -1,0 +1,4 @@
+.placesCards{
+    display: flex;
+    flex-wrap: wrap;
+}
