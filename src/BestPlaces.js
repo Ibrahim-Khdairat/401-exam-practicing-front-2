@@ -26,7 +26,7 @@ class BestPlaces extends React.Component {
 
     const { user, isAuthenticated } = this.props.auth0;
     if (isAuthenticated) {
-      let url = `http://localhost:3001/favplaces/${user.email}`
+      let url = `https://exam-practice401-2.herokuapp.com/favplaces/${user.email}`
 
       let data = await axios.get(url);
       this.setState({
@@ -37,7 +37,7 @@ class BestPlaces extends React.Component {
   }
 
   delete = async (index) => {
-    let url = `http://localhost:3001/deleteplaces/${this.state.email}?index=${index}`
+    let url = `https://exam-practice401-2.herokuapp.com/deleteplaces/${this.state.email}?index=${index}`
     let data = await axios.delete(url);
     this.setState({
       places: data.data,
@@ -68,7 +68,7 @@ class BestPlaces extends React.Component {
       Placename: event.target.name.value,
       PlaceImage: event.target.img.value
     }
-    let url = `http://localhost:3001/updateplace/${this.state.email}?index=${this.state.index}`
+    let url = `https://exam-practice401-2.herokuapp.com/updateplace/${this.state.email}?index=${this.state.index}`
 
     let data = await axios.put(url , updatedInfo);
     this.setState({

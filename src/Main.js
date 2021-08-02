@@ -17,14 +17,14 @@ class Main extends React.Component {
     componentDidMount = async () => {
         const { user, isAuthenticated } = this.props.auth0;
 
-        let responseData = await axios.get('http://localhost:3001/places')
+        let responseData = await axios.get('https://exam-practice401-2.herokuapp.com/places')
         this.setState({
             placesArr: responseData.data,
             email: user.email
         })
     }
     addToFav = async (place) => {
-        let url = `http://localhost:3001/addtofav/${this.state.email}`
+        let url = `https://exam-practice401-2.herokuapp.com/addtofav/${this.state.email}`
        await axios.post(url , place)
        
     }
